@@ -35,9 +35,29 @@ inquirer
         message: "What kind of license should your project have?",
         name: "license",
         choices: ["GPL", "MIT", "BSD 3", "APACHE 2.0", "None"]
+    },
+    {
+        type: "input",
+        message: "What command should be run to install dependencies?",
+        name: "dependencies",
+    },
+    {
+        type: "input",
+        message: "What command should be run to run tests?",
+        name: "npm test"
+    },
+    {
+        type: "input",
+        message: "What does the user need to know about using the repo?",
+        name: "need to know"
+    },
+    {
+        type: "input",
+        message: "What does the user need to know about contributing to the repo?",
+        name: "contributing info"
     }
 
-    ])
+    ]);
 
 function writeToFile(fileName, data) {
 }
