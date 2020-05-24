@@ -1,33 +1,37 @@
 function generateMarkdown(data) {
   return `
-## Title 
-# ${data.name}
+# Title 
+${data.name}
+![Badge](https://img.shields.io/badge/LICENSE-${data.license}-<green>)
 
 ## Description
-# ${data.description}
+${data.description}
 
-## Table of Contents
+##Table of Contents
+[Link](#url)
+[Repo Info](#info)
+[License](#license)
+[Dependencies](#dependencies)
+[Contact](#contact)
 
 
+##Link
+[URL](${data.url})
 
-## Link
-# ${data.url}
+##Info
+${data.info}
+The command ${data.test} should be used to run tests.
+In order to contribute to the repo ${data.contributing}
 
 ##License
-# ${data.license}
+License: ${data.license}
 
 ##Dependencies
-# ${data.dependencies}
+Dependencies: ${data.dependencies}
 
-##Repo Info
-# ${data.info}
-# The command ${data.test} should be used to run tests.
-# In order to contribute to the repo ${data.contributing}
-
-
-## Contact
-# ${data.username}
-# ${data.email}
+##Contact
+${data.username}
+${data.email}
 `;
 }
 

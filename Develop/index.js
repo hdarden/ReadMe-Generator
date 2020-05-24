@@ -59,8 +59,8 @@ const questions = [
 
 
 
-/* //function writeToFile(filename, data) {
-var data = questions(message.value);
+function writeToFile(filename, data) {
+
 fs.writeFile("readme.md", data, function(err){
         if (err){
             return console.log(err);
@@ -74,4 +74,4 @@ fs.writeFile("readme.md", data, function(err){
 
 }
 
-init(inquirer); */
+init(inquirer);
