@@ -60,11 +60,18 @@ const questions = [
 
 //write markdown
 function writeToFile(filename, data) {
+    //fs is used to create the readme and write the data from the questions inside the template
     fs.writeFile("readme.md", filename, data)
 
 }
 //initialize inquirer
  function init() {
+     //inquirer runs and prompts questions
+    inquirer
+    .prompt([questions
+
+    ]).then
+    writeToFile();
 
 }
 
