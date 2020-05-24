@@ -70,10 +70,8 @@ function writeToFile(filename, data) {
  function init() {
      //inquirer runs and prompts questions
     inquirer
-    .prompt([questions.message
-
-    ]).then(function(response){
-        var filename = response.questions.name
+    .prompt(questions).then(function(data){
+        var filename = data.questions.name
         writeToFile(filename, data);
     })
     
