@@ -1,7 +1,7 @@
-var inquirer = require("inquirer")
-var fs = require("fs")
+var inquirer = require("inquirer");
+var fs = require("fs");
 
-const questions = [];
+const questions = [
     
 inquirer
     .prompt ([
@@ -22,13 +22,20 @@ inquirer
     },
     {
         type: "input",
-        message: "What is your project's name?",
+        message: "What is your project's title?",
         name: "name"
     },
     {
         type: "input",
-        message: "Give a brief description of your project",
+        message: "Give a brief description of your project:",
         name: "description"
+    },
+    {
+        type: "checkbox",
+        message: "What is included in your table of contents?",
+        name: "Table of contents",
+        choices: []
+
     },
     {
         type: "list",
@@ -38,7 +45,7 @@ inquirer
     },
     {
         type: "input",
-        message: "What command should be run to install dependencies?",
+        message: "What command should be ran to install dependencies?",
         name: "dependencies",
     },
     {
@@ -57,13 +64,23 @@ inquirer
         name: "contributing info"
     }
 
-    ]);
+    ])
+]
 
-function writeToFile(fileName, data) {
+
+/* function writeToFile(fileName, data) {
+} */
+var data = inquirer;
+fs.writeFile("readme.md", data, function(err){
+        if (err){
+            return console.log(err);
+        }
+        console.log("Success!")
+    })
+
+
+/* function init() {
+
 }
 
-function init() {
-
-}
-
-init();
+init(); */
