@@ -1,10 +1,8 @@
 var inquirer = require("inquirer");
 var fs = require("fs");
+var markdown = require("./utils/generateMarkdown")
 
 const questions = [
-    
-inquirer
-    .prompt ([
     {
         type: "input",
         message: "What is your GitHub username?",
@@ -31,13 +29,6 @@ inquirer
         name: "description"
     },
     {
-        type: "checkbox",
-        message: "What is included in your table of contents?",
-        name: "Table of contents",
-        choices: []
-
-    },
-    {
         type: "list",
         message: "What kind of license should your project have?",
         name: "license",
@@ -51,36 +42,36 @@ inquirer
     {
         type: "input",
         message: "What command should be run to run tests?",
-        name: "npm test"
+        name: "test"
     },
     {
         type: "input",
         message: "What does the user need to know about using the repo?",
-        name: "need to know"
+        name: "info"
     },
     {
         type: "input",
         message: "What does the user need to know about contributing to the repo?",
-        name: "contributing info"
+        name: "contributing"
     }
 
-    ])
-]
+    ];
 
 
-/* function writeToFile(fileName, data) {
-} */
-var data = inquirer;
+
+/* //function writeToFile(filename, data) {
+var data = questions(message.value);
 fs.writeFile("readme.md", data, function(err){
         if (err){
             return console.log(err);
         }
         console.log("Success!")
     })
+//};
+//writeToFile();
 
-
-/* function init() {
+ function init() {
 
 }
 
-init(); */
+init(inquirer); */
