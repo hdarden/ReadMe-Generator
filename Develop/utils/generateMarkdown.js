@@ -1,14 +1,17 @@
 function generateMarkdown(data) {
+ //pulling all the data from index.js and creating the markdown.
+ //markdown template vv 
   return `
+
 # Title 
 ${data.name}
-![Badge](https://img.shields.io/badge/LICENSE-${data.license}-<green>)
+![Badge](https://img.shields.io/badge/LICENSE-${data.license}-<GREEN>)
 
 ## Description
 ${data.description}
 
 ##Table of Contents
-[Link](#url)
+[Link](#link)
 [Repo Info](#info)
 [License](#license)
 [Dependencies](#dependencies)

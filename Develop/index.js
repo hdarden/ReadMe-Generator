@@ -1,6 +1,6 @@
 var inquirer = require("inquirer");
 var fs = require("fs");
-var markdown = require("./utils/generateMarkdown")
+var generateMarkdown = require("./utils/generateMarkdown")
 
 const questions = [
     {
@@ -58,20 +58,14 @@ const questions = [
     ];
 
 
-
+//write markdown
 function writeToFile(filename, data) {
+    fs.writeFile("readme.md", filename, data)
 
-fs.writeFile("readme.md", data, function(err){
-        if (err){
-            return console.log(err);
-        }
-        console.log("Success!")
-    })
-//};
-//writeToFile();
-
+}
+//initialize inquirer
  function init() {
 
 }
 
-init(inquirer);
+init();
