@@ -58,21 +58,26 @@ const questions = [
     ];
 
 
-//write markdown
+//write markdown and call generate markdown
 function writeToFile(filename, data) {
     //fs is used to create the readme and write the data from the questions inside the template
     fs.writeFile("readme.md", filename, data)
+    generateMarkdown(data);
 
 }
-//initialize inquirer
+
+//initialize inquirer and call writeToFiles
  function init() {
      //inquirer runs and prompts questions
     inquirer
-    .prompt([questions
+    .prompt([questions.message
 
-    ]).then
-    writeToFile();
+    ]).then(function(response){
+        var filename = response.questions.name
+        writeToFile(filename, data);
+    })
+    
 
 }
-
+//calls initialize
 init();
